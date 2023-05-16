@@ -1,0 +1,9 @@
+http:
+  service: 0.0.0.0
+  port: 8080
+datasource:
+  username: root
+  password: root
+  address: 127.0.0.1:3306
+  db_name: citybrain
+

@@ -19,3 +19,12 @@
 
 # Go workspace file
 go.work
+
+.vscode
+.DS_Store
+.VSCodeCounter
+app/
+.idea/
+
+
+*.iml
