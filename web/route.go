@@ -7,5 +7,6 @@ import (
 
 func Route(c *gin.Engine) {
 	c.Group("/api").
-		GET("/hello", service.Hello)
+		GET("/hello", service.Hello).
+		GET("/dataset", service.Dataset)
 }

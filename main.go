@@ -2,8 +2,10 @@ package main
 
 import (
 	"Go-Web-Study/config"
+	"Go-Web-Study/db"
 	"Go-Web-Study/web"
 	"fmt"
+	"log"
 )
 
 func main() {
@@ -12,6 +14,11 @@ func main() {
 
 	if err != nil {
 		fmt.Println(err.Error())
+	}
+
+	err = db.Init(appConfig.DataSource.Username, appConfig.DataSource.Password, appConfig.DataSource.Address, appConfig.DataSource.DBName)
+	if err != nil {
+		log.Printf("DB Init failed, cause: %s", err.Error())
 	}
 	web.Service(appConfig.Http.Service, appConfig.Http.Port)
 
