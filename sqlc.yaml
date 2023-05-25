@@ -1,0 +1,14 @@
+# go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
+# in project dir root, run command "sqlc generate"
+version: "2"
+sql:
+- schema: "schema/tables.sql"
+  engine: "mysql"
+  queries:
+  - "schema/queries/user.sql"
+  gen:
+    go:
+      emit_empty_slices: true
+      package: "queries"
+      out: "db/queries"
+

@@ -8,5 +8,6 @@ import (
 func Route(c *gin.Engine) {
 	c.Group("/api").
 		GET("/hello", service.Hello).
-		GET("/dataset", service.Dataset)
+		GET("/dataset", service.Dataset).
+		GET("/getUser", service.GetUserById)
 }
